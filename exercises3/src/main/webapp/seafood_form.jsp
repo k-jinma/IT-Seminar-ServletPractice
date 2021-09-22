@@ -19,17 +19,19 @@
 		<main>
 				<table border="1">	
 				
+				<% for( int i =0; i < Seafood.item.length; i++){ %>
 					<tr>
-						<td><%=Seafood.item[0] %></td>
-						<td><%=Seafood.image[0] %></td>
-						<td>\ <%=Seafood.price[0] %></td>
+						<td><%=Seafood.item[i] %></td>
+						<td><img src=<% out.print( "img/"+ Seafood.image[i]); %>></td>
+						<td>&yen; <%=Seafood.price[i] %></td>
 						<td>
 							<form action="form" method="post">
 								<input type="submit" value="カートに入れる">
-								<input type="hidden" name="<%=Seafood.item[0] %> value="0">
+								<input type="hidden" name="<%=Seafood.item[i] %> value="0">
 							</form>
 						</td>
 					</tr>
+				<% } %>
 				
 				</table>
 			<p>
