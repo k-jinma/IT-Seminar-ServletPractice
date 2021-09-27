@@ -1,15 +1,17 @@
-<%@page import="kenmodel.TourBean" %>
+<%@ page import="kenmodel.TourBean" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <%
 	TourBean tour = (TourBean)session.getAttribute("tour");
 %>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<link rel="stylesheet" href="tour.css">
 <meta charset="UTF-8">
+<link rel="stylesheet" href="tour.css">
 <title>ツアー試算ページ</title>
 </head>
 <body>
@@ -25,26 +27,27 @@
 					<td class="col4">料金</td>
 				</tr>
 				<tr>
-					<td><%=tour.getTourId() %></td>
-					<td><%=tour.getTourName() %></td>
-					<td><%=tour.getPlace() %></td>
-					<td><%=tour.getPrice() %></td>
+					<td>${sessionScope.tour.tourId }</td>
+					<td>${sessionScope.tour.tourName }</td>
+					<td>${sessionScope.tour.place }</td>
+					<td>大人 &yen;${sessionScope.tour.price }</td>
 				</tr>
 			</table>
 		</section>
-		
+
 		<section>
 			<h2>試算</h2>
 			<p class="margineLeft">
-				大人：<%=tour.getNumAdult() %>名<br>
-				子供：<%=tour.getNumChild() %>名<br>
+				大人：${sessionScope.tour.numAdult }名<br>
+				子供：${sessionScope.tour.numChild }名
 			</p>
-			<h3>計：￥<%=tour.getTotalAmount() %></h3>
+			<h3>計： ￥${sessionScope.tour.getTotalAmout() }</h3>
+
 			<%
 				if( tour.getNumPeople() >= 4 ){
 			%>
 					<p class="discount">
-						<%=tour.getNumPeople() %>名様で、グループ割引適用、１割引き！！
+						${sessionScope.tour.numPeople }名様で、グループ割引適用、１割引！！
 					</p>
 			<%
 				}
@@ -55,7 +58,8 @@
 				</p>
 			</form>
 		</section>
-		
+
 	</main>
+
 </body>
 </html>
