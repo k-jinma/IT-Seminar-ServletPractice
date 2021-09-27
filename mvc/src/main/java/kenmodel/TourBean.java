@@ -9,7 +9,8 @@ public class TourBean implements Serializable {
 	private int price;
 	private int numAdult;
 	private int numChild;
-	
+
+
 	public String getTourId() {
 		return tourId;
 	}
@@ -46,20 +47,20 @@ public class TourBean implements Serializable {
 	public void setNumChild(int numChild) {
 		this.numChild = numChild;
 	}
-	
+
 	public int getNumPeople() {
 		return numAdult + numChild;
 	}
-	
-	public int getTotalAmount() {
+
+	public int getTotalAmout() {
 		int adPrice = numAdult * price;
 		int chPrice = numChild * price / 2;
 		int totalPrice = adPrice + chPrice;
-		
+
 		if( getNumPeople() >= 4 ) {
 			totalPrice = (int)(totalPrice * 0.9);
 		}
 		return totalPrice;
 	}
-	
+
 }
