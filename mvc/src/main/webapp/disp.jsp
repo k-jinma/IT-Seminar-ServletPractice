@@ -28,36 +28,46 @@
 				<input type="hidden" name="btn" value="IdSearch">
 				<input type="submit" value="検索">
 			</p>
-
-			<!-- P230 -->
-			<c:if test="${not empty requestScope.message }">
-				<p class="message">${requestScope.message }</p>
-			</c:if>
-
-			<c:if test="${not empty requestScope.empList }">
-				<h2>検索結果</h2>
-				<table border="1">
-					<tr>
-						<th>ID</th>
-						<th>名前</th>
-						<th>住所</th>
-						<th>年齢</th>
-						<th>E-MAIL</th>
-					</tr>
-
-					<c:forEach var="emp" items="${requestScope.empList }">
-						<tr>
-							<td><c:out value="${emp.id }" /></td>
-							<td><c:out value="${emp.name }" /></td>
-							<td><c:out value="${emp.address }" /></td>
-							<td><c:out value="${emp.age }" /></td>
-							<td><c:out value="${emp.mail }" /></td>
-						</tr>
-					</c:forEach>
-				</table>
-			</c:if>
-
 		</form>
+
+		<form action="controller" method="post">
+			<p>検索したい年齢を入力してください</p>
+			<p>
+				<input type="text" name="paramAge1">歳から
+				<input type="text" name="paramAge2">歳まで
+				<input type="hidden" name="btn" value="AgeSearch">
+				<input type="submit" value="検索">
+			</p>
+		</form>
+
+		<!-- P230 -->
+		<c:if test="${not empty requestScope.message }">
+			<p class="message">${requestScope.message }</p>
+		</c:if>
+
+		<c:if test="${not empty requestScope.empList }">
+			<h2>検索結果</h2>
+			<table border="1">
+				<tr>
+					<th>ID</th>
+					<th>名前</th>
+					<th>住所</th>
+					<th>年齢</th>
+					<th>E-MAIL</th>
+				</tr>
+
+				<c:forEach var="emp" items="${requestScope.empList }">
+					<tr>
+						<td><c:out value="${emp.id }" /></td>
+						<td><c:out value="${emp.name }" /></td>
+						<td><c:out value="${emp.address }" /></td>
+						<td><c:out value="${emp.age }" /></td>
+						<td><c:out value="${emp.mail }" /></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</c:if>
+
 	</main>
 </body>
 </html>
