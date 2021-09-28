@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kenservice.AgeSearch;
 import kenservice.IdSearch;
 
 /**
@@ -45,6 +46,11 @@ public class Controller extends HttpServlet {
 			if( searchBtn != null && searchBtn.equals("IdSearch") ) {
 				IdSearch ids = new IdSearch();
 				ids.execute( request );
+				jsp = "/disp.jsp";
+
+			}else if( searchBtn != null && searchBtn.equals("AgeSearch") ) {
+				AgeSearch ages = new AgeSearch();
+				ages.execute( request );
 				jsp = "/disp.jsp";
 
 			}else {
