@@ -18,7 +18,7 @@ public class SearchDAO {
 		Class.forName("com.mysql.jdbc.Driver");
 		String url = "jdbc:mysql://localhost:3306/latte_station?useSSL=false";
 		String user = "root";
-		String password = "jinma0807";
+		String password = "root";
 		connection = DriverManager.getConnection(url, user, password);
 		
 		String sql1 = "select * from latte_station.item where genre_id = ?";
