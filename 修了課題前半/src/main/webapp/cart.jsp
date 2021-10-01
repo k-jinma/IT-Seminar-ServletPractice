@@ -47,7 +47,20 @@
 				</tr>
 			</table>
 			<!-- ●！！！！表の作成はここから！！！！●  -->
-
+			<c:forEach var="item" items="${sessionScope.cart}" varStatus="status">
+				<form action="kenshop" method="post">
+					<div class="items">
+						<div class="lineup">${item.getItemName()}</div>
+						<div class="lineup">${item.getItemArtist()}</div>
+						<div class="lineup">${item.getItemPrice()}</div>
+					<div class="lineup_btn">
+						<input type="submit" value="取り消し">
+						<input type="hidden" name="act" value="remove">
+						<input type="hidden" name="remove" value="${status.index}">
+					</div>
+					</div>
+				</form>
+			</c:forEach>
 			<!-- ↑↑↑↑表の作成はここまで↑↑↑↑  -->
 			<form action="kenshop" method="post">
 				<p>

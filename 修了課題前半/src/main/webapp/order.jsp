@@ -62,12 +62,20 @@
 					<th class="cart">価格</th>
 				</tr>
 				<!-- ●！！！！表の作成はここから！！！！●  -->
-
+				<c:forEach var="item" items="${sessionScope.cart}">
+					<tr>
+						<td class="cart"><c:out value="${item.getItemName()}"/></td>
+						<td class="cart"><c:out value="${item.getItemArtist()}"/></td>
+						<td class="cart"><c:out value="${item.getItemPrice()}"/></td>
+					</tr>
+					
+					<c:set var="total" value="${ total + item.itemPrice }"/>
+				</c:forEach>
 				<!-- ↑↑↑↑表の作成はここまで↑↑↑↑  -->
 			</table>
 			<br>
 			<p>
-				<strong>合計金額は税込みで円になります。</strong>
+				<strong>合計金額は税込みで${total}円になります。</strong>
 			</p>
 			<p>
 				下のフォームにお客様のお名前、ご住所、電話番号、メールアドレスを入力して、<br>
