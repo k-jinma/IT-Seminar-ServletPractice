@@ -1,0 +1,23 @@
+
+DROP DATABASE IF EXISTS java_web_system;
+
+CREATE DATABASE java_web_system DEFAULT CHARACTER SET utf8;
+
+DROP TABLE IF EXISTS java_web_system.employee;
+
+CREATE TABLE java_web_system.employee(
+	employee_id INT  NOT NULL  AUTO_INCREMENT ,
+	employee_name CHAR(50)  NOT NULL ,
+	employee_address CHAR(50)  NOT NULL ,
+	employee_age INT  NOT NULL ,
+	employee_mail CHAR(50) NOT NULL ,
+	PRIMARY KEY(employee_id)
+)ENGINE=InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+INSERT INTO java_web_system.employee VALUES(1,'鈴木一郎','東京',51,'suzuki@ken.jp');
+INSERT INTO java_web_system.employee VALUES(2,'山田花子','神奈川',40,'yamada@ken.jp');
+INSERT INTO java_web_system.employee VALUES(3,'田中次郎','埼玉',30,'tanaka@ken.jp');
+INSERT INTO java_web_system.employee VALUES(4,'佐藤三郎','千葉',25,'sato@ken.jp');
+INSERT INTO java_web_system.employee VALUES(5,'高橋さくら','茨城',31,'takahashi@ken.jp');
+
