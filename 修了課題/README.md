@@ -20,7 +20,7 @@
   (3) 以下のフォルダー（Eclipseプロジェクトと表記のあるもの）のみチェックを入れて「完了」ボタンを押すとプロジェクトがインポートされます
   ![](https://github.com/k-jinma/IT-Seminar-ServletPractice/blob/imgs/003.png?raw=true)
   
-  (4) インポートされたプロジェクトの実行は以下に配置されている「Controller.java」をサーバーで実行します
+  (4) インポートされたプロジェクトの実行は以下に配置されている「Control.java」をサーバーで実行します
   ![](https://github.com/k-jinma/IT-Seminar-ServletPractice/blob/imgs/004.png?raw=true)
   
 
