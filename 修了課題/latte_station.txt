@@ -1,0 +1,57 @@
+-- CREATE DATABASE latte_station ########################################################
+
+DROP DATABASE IF EXISTS latte_station;
+
+CREATE DATABASE latte_station;
+
+USE latte_station;
+
+-- CREATE TABLE item ########################################################
+
+CREATE TABLE item(
+	item_id INTEGER NOT NULL PRIMARY KEY,
+	item_name VARCHAR(50) NULL,
+	artist VARCHAR(50) NULL,
+	price INTEGER NOT NULL ,
+	item_img VARCHAR(50) NULL ,
+	genre_id VARCHAR(50) NOT NULL
+);
+
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id)VALUES(101,'ホリー・ポットー','ケン・ジャイシー',580,'img/h4.jpg','book');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(102,'AGE of vase','ダンレッド',410,'img/h3.jpg','book');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(103,'龍玉60年の歴史','島山明',600,'img/h2.jpg','book');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(104,'メサニョキ','さくらむむこ',1050,'img/h1.jpg','book');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(201,'Dream on and roll','AERO-Zeppelin',2945,'img/d1.jpg','cd');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(202,'song3','plur',2543,'img/l2.jpg','cd');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(203,'ウマトラ','浜崎あゆみ子',2800,'img/d3.jpg','cd');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(301,'In bar Dream','DATA WEST',7140,'img/g1.jpg','game');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(302,'DANCE DANCE!!','小波',6090,'img/g2.jpg','game');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(303,'COW GAME','忍転道',7329,'img/g4.jpg','game');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(304,'IMPOSSIBLE IS NOTHING','南無子',4800,'img/g3.jpg','game');
+INSERT INTO item(item_id,item_name,artist,price,item_img,genre_id) VALUES(305,'ひとりの野球','小波',4800,'img/no.png','game');
+
+-- CREATE table  user ########################################################
+
+CREATE TABLE user(
+	user_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	user_name VARCHAR(50) NULL,
+	user_name_kana VARCHAR(50) NULL,
+	post VARCHAR(20) NULL,
+	address VARCHAR(100) NULL,
+	phone VARCHAR(50) NULL,
+	mail VARCHAR(50) NULL
+);
+
+INSERT INTO user VALUES (1001, '野村朱里', 'ノムラアカリ', '932-3333', '東京都世田谷区北沢1-1-1KENコーポ203','090-0000-0000','kenken1@kenschool.jp');
+INSERT INTO user VALUES (1002, '佐藤賢一', 'サトウケンイチ', '932-3334', '千葉県船橋市1-1-1KENコーポ204','090-0000-0000','kenken2@kenschool.jp');
+INSERT INTO user VALUES (1003, '田中秀雄', 'タナカヒデオ', '932-3335', '神奈川県横浜市1-1-1KENコーポ205','090-0000-0000','kenken3@kenschool.jp');
+INSERT INTO user VALUES (1004, '松本昭徳', 'マツモトアキノリ', '932-3336', '神奈川県秦野市1-1-1KENコーポ204','090-0000-0000','kenken4@kenschool.jp');
+
+-- CREATE table  orderitem ########################################################
+
+CREATE TABLE orderitem(
+	order_id INTEGER NOT NULL,
+	user_id INTEGER NOT NULL,
+	item_id INTEGER NOT NULL
+);
+
