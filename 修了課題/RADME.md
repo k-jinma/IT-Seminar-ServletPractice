@@ -4,7 +4,7 @@
 
   latte_station.txtに記載のSQLを実行します
 
-  (1) プログラムファイルから「MySQL 8.0 Command Line Client - Unicode」を起動しログインする<br>
+  (1) プログラムメニューから「MySQL 8.0 Command Line Client - Unicode」を起動しログインする<br>
   (2) latte_station.txtの全文をコピー＆貼付けし実行する<br>
   (3) プログラムを終了する
 
